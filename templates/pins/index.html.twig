@@ -1,0 +1,32 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Test Symfony
+{% endblock %}
+
+
+{% block body %}
+
+<h1>All Pins</h1>
+
+        {# {% if pins|length > 0 %} #}
+            
+            {% for pin in pins %}
+                <article>
+                    <h1> <a href="{{path('app_pins_show', {'id': pin.id})}}">{{pin.title()}}</a></h1> 
+                    <p>{{pin.description | u.truncate(32, '...') }}</p>
+                     <p> Soumis : {{pin.createdAt | ago(locale='fr') }}</p>
+                    </article>
+                    {% else %}
+
+            <p>Désolé, acun pin enregistré!</p>
+
+            {% endfor %}
+
+
+
+{# {% endif %} #}
+    
+{% endblock %}
+

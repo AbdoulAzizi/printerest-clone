@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Test Symfony
+{% endblock %}
+
+
+{% block body %}
+
+    <h1>Editer le Pin #{{pin.id}} </h1>
+
+       {{ include("/pins/_form.html.twig", {submitButtonText: 'Mettre à jour le Pin'}) }}
+
+
+{% endblock %}

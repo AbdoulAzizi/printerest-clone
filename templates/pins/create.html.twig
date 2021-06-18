@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Test Symfony
+{% endblock %}
+
+
+{% block body %}
+
+
+       {{ include("/pins/_form.html.twig", {submitButtonText: 'Créer Pin'}) }}
+
+    {# <form action="" method="POST">
+        <input type="hidden" name="_token" value="{{csrf_token('pins_create')}}">
+
+        <div>
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="title" value="Title">
+        </div>
+
+         <div>
+            <label for="description">Description</label><br>
+            <textarea name="description" id="description" cols="60" rows="10">Description</textarea>
+          
+        </div>
+        
+        <input type="submit" value="Create Pin">
+    </form> #}
+
+{% endblock %}

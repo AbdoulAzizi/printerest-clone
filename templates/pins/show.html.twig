@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Test Symfony
+{% endblock %}
+
+
+{% block body %}
+
+    <h1>{{pin.title}}</h1>
+    <p>{{pin.description}}</p>
+
+<a href="{{path('app_pins_edit',  {'id': pin.id})}}">Edit le Pin</a> |
+<a href="#" onclick="event.preventDefault(); confirm('Etes vous sûr de supprimer ce pin ?') && document.getElementById('js-pin-delete-form').submit();">Supprimer le Pin</a> 
+     
+{# <a href="{{path('app_pins_delete',  {'id': pin.id})}}">Supprimer le Pin</a> #}
+
+<form id="js-pin-delete-form" action="{{path('app_pins_delete',  {'id': pin.id})}}" method="POST" style="display:none;">
+ <input type="hidden" name="csrf_token" value="{{csrf_token('pins_deletion_' ~ pin.id) }}">
+<input type="hidden" name="_method" value="DELETE">
+</form>
+
+    
+{% endblock %}
