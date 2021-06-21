@@ -7,9 +7,18 @@
 
 {% block body %}
 
-                <p>Pin Create Page</p>
+       
+
+        <div class="row">
+        <div class="col-md-6 mx-auto">
+         <p>Pin Create Page</p>
+        
+         {{ include("/pins/_form.html.twig", {submitButtonText: 'Créer Pin'}) }}    
+        </div>
+        
+        </div>
                 
-       {{ include("/pins/_form.html.twig", {submitButtonText: 'Créer Pin'}) }}
+      
 
     {# <form action="" method="POST">
         <input type="hidden" name="_token" value="{{csrf_token('pins_create')}}">

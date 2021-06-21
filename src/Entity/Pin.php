@@ -23,7 +23,7 @@ class Pin
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="le Titre ne peut pas être vide")
+     * @Assert\NotBlank
      * @Assert\Length(min=3)
      */
     private $title;
@@ -55,7 +55,7 @@ class Pin
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
@@ -67,7 +67,7 @@ class Pin
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
