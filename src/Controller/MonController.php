@@ -103,6 +103,8 @@ class MonController extends AbstractController
         
             $em->flush();
 
+            $this->addFlash('success', 'Votre Pin a bien été mis à jour');
+
             // return $this->redirectToRoute('app_home');
             return $this->redirectToRoute('app_home');
            }
@@ -127,6 +129,8 @@ class MonController extends AbstractController
 
                  $em->remove($pin);
                  $em->flush();
+
+                 $this->addFlash('info', 'Votre Pin a été bien supprimé');
 
         }
        
@@ -189,6 +193,8 @@ class MonController extends AbstractController
             // $em->persist($pin);
             $em->persist($pin);
             $em->flush();
+
+            $this->addFlash('success', 'Votre Pin a été bien créé');
 
             // return $this->redirectToRoute('app_home');
             return $this->redirectToRoute('app_pins_show', ['id'=> $pin->getId()]);
